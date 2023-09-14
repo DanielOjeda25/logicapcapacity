@@ -1,0 +1,42 @@
+---
+---
+
+<nav class="bg-blue-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="text-white text-2xl font-bold">AKTIVA</div>
+        <div class="hidden sm:flex space-x-4">
+            <a href="#" class="text-white hover:text-gray-200">Inicio</a>
+            <a href="#" class="text-white hover:text-gray-200">Acerca de</a>
+            <a href="#" class="text-white hover:text-gray-200">Servicios</a>
+            <a href="#" class="text-white hover:text-gray-200">Contacto</a>
+        </div>
+        <div class="sm:hidden">
+            <button id="menu-toggle" class="text-white">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                     stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div id="mobile-menu" class="hidden sm:hidden">
+    <div class="bg-blue-500 p-4">
+        <a href="#" class="block text-white hover:text-gray-200">Inicio</a>
+        <a href="#" class="block text-white hover:text-gray-200">Acerca de</a>
+        <a href="#" class="block text-white hover:text-gray-200">Servicios</a>
+        <a href="#" class="block text-white hover:text-gray-200">Contacto</a>
+    </div>
+</div>
+
+<script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (mobileMenu.style.display === "block") {
+            mobileMenu.style.display = "none";
+        } else {
+            mobileMenu.style.display = "block";
+        }
+    });
+</script>
