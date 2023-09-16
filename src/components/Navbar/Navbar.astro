@@ -47,4 +47,38 @@ import NavLinks from "./NavLinks.astro";
       mobileMenu.style.display = "block";
     }
   });
+  const closeIconSVG = `
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+`;
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  let isOpen = false;
+
+  menuToggle.addEventListener("click", function () {
+    isOpen = !isOpen;
+
+    if (isOpen) {
+      // Mostrar el nuevo icono (closeIconSVG) y el menú
+      menuToggle.innerHTML = closeIconSVG;
+      mobileMenu.style.display = "block";
+    } else {
+      // Mostrar el icono de hamburguesa original y ocultar el menú
+      menuToggle.innerHTML = `
+      <svg
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        class="w-6 h-6"
+      >
+        <path d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    `;
+      mobileMenu.style.display = "none";
+    }
+  });
 </script>
