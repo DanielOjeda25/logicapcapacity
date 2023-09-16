@@ -2,12 +2,13 @@
 const { title, to } = Astro.props;
 ---
 
-<a href={to} class="text-white hover:text-gray-200 font-thin">{title}</a>
+<a href={to} class="text-slate-600 text-xl hover:text-slate-900 font-thin"
+  >{title}</a
+>
 
 <style>
   /* Estilos base para el enlace */
   a {
-    color: white;
     text-decoration: none;
     position: relative; /* Importante para posicionar el pseudo-elemento correctamente */
   }
@@ -20,7 +21,7 @@ const { title, to } = Astro.props;
     left: 0;
     width: 0; /* Inicialmente, la línea tiene ancho cero */
     height: 2px; /* Grosor de la línea */
-    background-color: white; /* Color de la línea */
+    background-color: gray; /* Color de la línea */
     transition: width 0.3s; /* Transición para el ancho de la línea */
   }
 
