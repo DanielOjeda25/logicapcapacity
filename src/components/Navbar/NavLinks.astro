@@ -1,0 +1,31 @@
+---
+const { title, to } = Astro.props;
+---
+
+<a href={to} class="text-white hover:text-gray-200 font-thin">{title}</a>
+
+<style>
+  /* Estilos base para el enlace */
+  a {
+    color: white;
+    text-decoration: none;
+    position: relative; /* Importante para posicionar el pseudo-elemento correctamente */
+  }
+
+  /* Pseudo-elemento para crear la línea */
+  a::before {
+    content: "";
+    position: absolute;
+    bottom: -2px; /* Ajusta la posición vertical de la línea según tus preferencias */
+    left: 0;
+    width: 0; /* Inicialmente, la línea tiene ancho cero */
+    height: 2px; /* Grosor de la línea */
+    background-color: white; /* Color de la línea */
+    transition: width 0.3s; /* Transición para el ancho de la línea */
+  }
+
+  /* Efecto al hacer hover */
+  a:hover::before {
+    width: 100%; /* La línea se expande desde la izquierda a la derecha */
+  }
+</style>
