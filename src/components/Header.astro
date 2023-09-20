@@ -1,14 +1,79 @@
----
-
----
-
-<header class="relative text-dark h-1/2" id="inicio">
-  <img src="/bg-header.png" alt="Imagen Descriptiva" class="w-full" />
-
-  <div
-    class="container mx-auto absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center p-8"
-  >
-    <h1 class="text-4xl font-bold mb-4">¡Bienvenido a Mi Sitio Web!</h1>
-    <p class="text-lg">Tu fuente confiable para información interesante.</p>
+<header class="relative text-black h-screen flex items-center justify-center">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 absolute inset-0">
+    <div class="col-span-1 flex items-center justify-center">
+      <div
+        class="bg-opacity-70 backdrop-blur-sm w-3/4 h-3/4 shadow-lg p-8 text-white text-center md:text-left"
+      >
+        <h1 class="text-gray-900 text-4xl md:text-5xl">
+          Hacemos tus ideas una <span id="typed-text"></span>.<span
+            class="cursor"></span>
+        </h1>
+        <p class="text-lg text-gray-700 mt-4 md:text-xl">
+          En el mundo actual, la presencia en línea es esencial. En AKTIVA,
+          entendemos el valor de una presencia web efectiva y cautivadora.
+          Nuestro equipo de expertos en diseño, desarrollo y despliegue de
+          sitios web está aquí para llevar tus ideas al siguiente nivel.
+        </p>
+      </div>
+    </div>
+    <div class="col-span-1">
+      <img
+        src="/header-bg.jpg"
+        alt="Imagen Descriptiva"
+        class="w-full h-full object-cover"
+      />
+    </div>
   </div>
 </header>
+
+<style>
+  /* Estilo para la barra vertical que parpadea */
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 20px;
+    background-color: #000;
+    animation: cursor-blink 1s infinite;
+  }
+
+  @keyframes cursor-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  const textElement = document.getElementById("typed-text");
+  const words = ["posibilidad", "realidad"];
+  let wordIndex = 0;
+  let charIndex = 0;
+
+  function type() {
+    if (charIndex < words[wordIndex].length) {
+      textElement.textContent += words[wordIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, 100); // Velocidad de escritura (ajusta según desees)
+    } else {
+      setTimeout(erase, 1000); // Espera antes de borrar
+    }
+  }
+
+  function erase() {
+    if (charIndex > 0) {
+      const newText = words[wordIndex].substring(0, charIndex - 1);
+      textElement.textContent = newText;
+      charIndex--;
+      setTimeout(erase, 50); // Velocidad de borrado (ajusta según desees)
+    } else {
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(type, 500); // Espera antes de escribir la siguiente palabra
+    }
+  }
+
+  type(); // Comienza el efecto de escritura
+</script>
