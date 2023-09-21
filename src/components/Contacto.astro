@@ -1,13 +1,42 @@
----
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const mensajeEnviado = document.getElementById("mensaje-enviado");
+    const loader = document.querySelector(".loader");
 
----
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+
+      // Mostrar el loader y ocultar el mensaje
+      loader.style.display = "block";
+      mensajeEnviado.style.display = "none";
+
+      // Tu código para enviar el formulario aquí (puede usar fetch u otro método)
+
+      // Simular una demora de 3 segundos (puedes reemplazar esto con tu código real de envío)
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+
+      // Ocultar el loader y mostrar el mensaje "Mensaje enviado"
+      loader.style.display = "none";
+      mensajeEnviado.style.display = "block";
+
+      // Limpiar los campos del formulario
+      form.reset();
+
+      // Ocultar el mensaje después de unos segundos (opcional)
+      setTimeout(() => {
+        mensajeEnviado.style.display = "none";
+      }, 2000); // 3 segundos
+    });
+  });
+</script>
 
 <div class="flex items-center justify-center h-screen" id="contacto">
   <div
     class="bg-white p-8 rounded-lg shadow-lg w-full sm:w-3/4 md:w-2/3 lg:w-1/2"
   >
     <h1 class="text-2xl font-semibold mb-4">Formulario de Contacto</h1>
-    <form action="#" method="POST">
+    <form action="https://formspree.io/f/xoqoknbn" method="POST">
       <div class="mb-4">
         <label for="nombre" class="block text-gray-700 font-semibold"
           >Nombre Completo:</label
@@ -43,13 +72,41 @@
           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
           required></textarea>
       </div>
-      <div class="mt-6">
+      <div
+        id="mensaje-enviado"
+        class="text-green-400 bg-green-200 rounded shadow-sm w-1/2 mx-auto py-2 text-center mt-4 hidden"
+      >
+        Mensaje enviado
+      </div>
+      <div class="loader mx-auto mt-4"></div>
+      <div class="mt-6 flex justify-center items-center">
         <button
           type="submit"
-          class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+          class="w-1/2 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
           >Enviar</button
         >
       </div>
     </form>
   </div>
 </div>
+<style>
+  /* Estilos del loader */
+  .loader {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    display: none;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
