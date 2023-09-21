@@ -12,26 +12,27 @@
 
       <!-- Contenedor flex con dos elementos -->
       <div
-        class="flex flex-row items-center justify-between text-white absolute top-0 left-0 w-full h-full"
+        class="flex flex-col md:flex-row items-center justify-between text-white absolute top-0 left-0 w-full h-full"
       >
         <!-- Primer elemento -->
-        <div class="flex justify-start items-center w-1/2 ml-2">
-          <div class="flex flex-col w-full justify-center items-center">
-            <h1 class="text-start w-full text-white text-8xl font-extrabold">
-              Diseño web
-            </h1>
-            <p class="text-start w-full text-[#07F6FD] text-6xl font-extrabold">
+        <div class="md:w-1/2 md:flex md:justify-start md:items-center ml-2">
+          <div class="w-full md:w-auto text-center md:text-start mt-5">
+            <h1 class="text-5xl md:text-8xl font-extrabold">Diseño web</h1>
+            <p class="text-3xl md:text-6xl font-extrabold text-[#07F6FD]">
               100% a medida
             </p>
-            <span class="font-thin text-2xl text-start w-full"
-              >Creamos sitios webs con diseños profesionales <br /> y contenidos
-              optimizados sin plantillas.</span
+            <span
+              class="font-thin text-lg md:text-2xl text-center md:text-start"
             >
-            <div class="w-full justify-start flex mt-3">
+              Creamos sitios webs con diseños profesionales <br /> y contenidos
+              optimizados sin plantillas.
+            </span>
+            <div class="w-full justify-center md:justify-start flex mt-3">
               <button
                 class="bg-white text-gray-600 hover:text-gray-900 py-2 px-4 rounded-full text-lg shadow-sm"
-                >Solicitar Cotización</button
               >
+                Solicitar Cotización
+              </button>
             </div>
           </div>
         </div>
