@@ -1,0 +1,47 @@
+---
+import Tarjeta from "./Tarjeta.astro";
+
+const serviciosData = [
+  {
+    imagenSrc: "/calendario.png",
+    titulo: "Horarios",
+    descripcion: "Descripción de la Tarjeta 1.",
+  },
+  {
+    imagenSrc: "equipo.png",
+    titulo: "Equipo",
+    descripcion: "Descripción de la Tarjeta 2.",
+  },
+  {
+    imagenSrc: "flujo.png",
+    titulo: "Flujo",
+    descripcion: "Descripción de la Tarjeta 3.",
+  },
+  {
+    imagenSrc: "gestion.png",
+    titulo: "Tiempos",
+    descripcion: "Descripción de la Tarjeta 4.",
+  },
+];
+---
+
+<section id="servicios">
+  <div class="container mx-auto py-8">
+    <h1 class="text-3xl font-semibold text-center mb-8">Nuestras Servicios</h1>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:mx-2"
+    >
+      {
+        serviciosData.map((servicios) => (
+          <Tarjeta
+            titulo={servicios.titulo}
+            imagenSrc={servicios.imagenSrc}
+            descripcion={servicios.descripcion}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script></script>
