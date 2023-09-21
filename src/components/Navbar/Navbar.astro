@@ -2,7 +2,7 @@
 import NavLinks from "./NavLinks.astro";
 ---
 
-<nav class="p-4 fixed top-0 w-full z-10 shadow-sm">
+<nav class="p-4 fixed bg-white top-0 w-full z-10 shadow-sm">
   <div class="container mx-auto flex justify-between items-center">
     <a
       href="/"
@@ -39,12 +39,14 @@ import NavLinks from "./NavLinks.astro";
   class="hidden fixed w-full sm:hidden z-10 transition-all bg-white"
 >
   <div class="p-4 flex flex-col">
-    <NavLinks title="Sobre Nosotros" to={"#aboutus"} />
+    <NavLinks title="Nosotros" to={"#aboutus"} />
     <NavLinks title="Servicios" to={"#servicios"} />
     <NavLinks title="Blog" to={"#blog"} />
     <NavLinks title="Contacto" to={"#contacto"} />
   </div>
 </div>
+
+<!-- ... (código anterior) ... -->
 
 <script>
   document.getElementById("menu-toggle").addEventListener("click", function () {
@@ -55,15 +57,15 @@ import NavLinks from "./NavLinks.astro";
       mobileMenu.style.display = "block";
     }
   });
-  const closeIconSVG = `
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-  </svg>
-`;
+
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
   let isOpen = false;
-
+  let originalIcon = menuToggle.innerHTML; // Guarda el SVG original aquí
+  let closeIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
+`;
   menuToggle.addEventListener("click", function () {
     isOpen = !isOpen;
 
@@ -72,21 +74,24 @@ import NavLinks from "./NavLinks.astro";
       menuToggle.innerHTML = closeIconSVG;
       mobileMenu.style.display = "block";
     } else {
-      // Mostrar el icono de hamburguesa original y ocultar el menú
-      menuToggle.innerHTML = `
-      <svg
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        class="w-6 h-6"
-      >
-        <path d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    `;
+      // Restaurar el icono de hamburguesa original y ocultar el menú
+      menuToggle.innerHTML = originalIcon; // Restaura el SVG original
       mobileMenu.style.display = "none";
     }
+  });
+
+  // Obtén todos los elementos del menú móvil
+  const mobileMenuItems = document.querySelectorAll("#mobile-menu a");
+
+  // Agrega un manejador de eventos a cada elemento del menú
+  mobileMenuItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      // Cierra el menú móvil al hacer clic en un elemento del menú
+      mobileMenu.style.display = "none";
+      // Restaura el icono de hamburguesa original
+      menuToggle.innerHTML = originalIcon; // Restaura el SVG original
+      // Asegúrate de que la variable isOpen refleje el estado actual
+      isOpen = false;
+    });
   });
 </script>

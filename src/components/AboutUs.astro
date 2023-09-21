@@ -1,3 +1,24 @@
+---
+import Tarjeta from "../components/Servicios/Tarjeta.astro";
+const personal = [
+  {
+    imagenSrc: "/Brian.png",
+    titulo: "Brian",
+    descripcion: "Descripción de la Tarjeta 1.",
+  },
+  {
+    imagenSrc: "Dany.png",
+    titulo: "Daniel",
+    descripcion: "Descripción de la Tarjeta 2.",
+  },
+  {
+    imagenSrc: "Cyntia.png",
+    titulo: "Cyntia",
+    descripcion: "Descripción de la Tarjeta 3.",
+  },
+];
+---
+
 <section class="pt-8 md:py-12" id="aboutus">
   <div class="container mx-auto px-4 md:pt-6">
     <div class="text-center md:flex md:items-center md:justify-center">
@@ -11,29 +32,27 @@
       </h2>
     </div>
     <p
-      class="mt-2 md:mt-4 text-gray-800 text-lg md:text-base text-center md:text-left animate-slide"
+      class="mt-2 md:mt-4 text-gray-800 text-lg md:text-center text-center"
       id="aboutus-text"
     >
-      "En AKTIVA, transformamos ideas en soluciones digitales excepcionales.
-      Simplificamos la vida de nuestros clientes con servicios web innovadores
-      que agilizan tareas y brindan experiencias únicas. Con creatividad,
-      experiencia técnica y compromiso, impulsamos tu visión hacia el éxito en
-      línea. En AKTIVA, creamos oportunidades y soluciones que marcan la
-      diferencia."
+      Somos un equipo de expertos apasionados por la creación de sitios web
+      impactantes y funcionales que impulsan el éxito de tu negocio en línea.
+      Nuestra experiencia y conocimientos en diseño web, desarrollo front-end y
+      back-end, así como en usabilidad y experiencia de usuario, nos permiten
+      ofrecer resultados excepcionales. Estamos al tanto de las últimas
+      tendencias y tecnologías en el mundo digital, lo que nos permite crear
+      sitios web modernos, intuitivos y optimizados para todos los dispositivos.
     </p>
+    <div class="flex flex-col sm:flex-row">
+      {
+        personal.map((person) => (
+          <Tarjeta
+            titulo={person.titulo}
+            descripcion={person.descripcion}
+            imagenSrc={person.imagenSrc}
+          />
+        ))
+      }
+    </div>
   </div>
 </section>
-<style>
-  @keyframes slide {
-    from {
-      transform: translateY(-100%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-
-  .animate-slide {
-    animation: slide 1s ease-in-out forwards;
-  }
-</style>
