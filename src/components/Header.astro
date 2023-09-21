@@ -1,77 +1,43 @@
 <header
-  class="relative flex w-full 0 flex-col md:flex-row h-screen items-center justify-center shadow-sm"
-  style="min-width: 320px;"
+  class="relative flex w-full z-50 flex-col md:flex-row h-screen items-center justify-center shadow-sm"
 >
-  <div
-    class="w-full text-white text-center flex items-center justify-center shadow-lg"
-  >
-    <div class="bg-opacity-70 backdrop-blur-sm m-5 p-5 rounded-sm mx-auto">
-      <h1
-        class="text-gray-800 p-2 uppercase text-2xl font-bold md:text-5xl first-letter:text-gray-900"
+  <div class="w-full text-center flex items-center justify-center shadow-lg">
+    <!-- Contenedor para la imagen -->
+    <div class="w-full h-full bg-opacity-70">
+      <img
+        src="/cool-background.svg"
+        alt="Imagen Descriptiva"
+        class="w-full h-full object-cover"
+      />
+
+      <!-- Contenedor flex con dos elementos -->
+      <div
+        class="flex flex-row items-center justify-between text-white absolute top-0 left-0 w-full h-full"
       >
-        Hacemos tus ideas una <br /><span id="typed-text"></span><span
-          class="cursor"></span>
-      </h1>
-      <p class="text-lg md:text-xl leading-relaxed mt-4 text-black p-2">
-        "En AKTIVA, entendemos el valor de una presencia web efectiva y
-        cautivadora. Nuestro equipo de expertos está aquí para llevar tus ideas
-        al siguiente nivel en línea."
-      </p>
+        <!-- Primer elemento -->
+        <div class="flex justify-start items-center w-full ml-2">
+          <div class="flex flex-col w-full justify-center items-center">
+            <h1 class="text-start w-full text-white text-8xl font-extrabold">
+              Diseño web
+            </h1>
+            <p class="text-start w-full text-[#07F6FD] text-8xl font-extrabold">
+              100% a medida
+            </p>
+            <span class="font-thin text-2xl text-start w-full"
+              >Creamos sitios webs con diseños profesionales <br /> y contenidos
+              optimizados sin plantillas.</span
+            >
+            <div class="w-full justify-start flex mt-3">
+              <button
+                class="bg-white text-gray-600 hover:text-gray-900 py-2 px-4 w-1/6 rounded-full text-lg shadow-sm"
+                >Solicitar Cotización</button
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Segundo elemento -->
+        <div class="mt-4">Elemento 2</div>
+      </div>
     </div>
   </div>
-  <div class="w-1/2">
-    <img src="/header-bg.jpg" alt="Imagen Descriptiva" class="w-full" />
-  </div>
 </header>
-
-<style>
-  /* Estilo para la barra vertical que parpadea */
-  .cursor {
-    display: inline-block;
-    width: 8px;
-    height: 20px;
-    background-color: #000;
-    animation: cursor-blink 1s infinite;
-  }
-
-  @keyframes cursor-blink {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-  }
-</style>
-
-<script>
-  const textElement = document.getElementById("typed-text");
-  const words = ["POSIBILIDAD", "REALIDAD"];
-  let wordIndex = 0;
-  let charIndex = 0;
-
-  function type() {
-    if (charIndex < words[wordIndex].length) {
-      textElement.textContent += words[wordIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(type, 100); // Velocidad de escritura (ajusta según desees)
-    } else {
-      setTimeout(erase, 1000); // Espera antes de borrar
-    }
-  }
-
-  function erase() {
-    if (charIndex > 0) {
-      const newText = words[wordIndex].substring(0, charIndex - 1);
-      textElement.textContent = newText;
-      charIndex--;
-      setTimeout(erase, 50); // Velocidad de borrado (ajusta según desees)
-    } else {
-      wordIndex = (wordIndex + 1) % words.length;
-      setTimeout(type, 500); // Espera antes de escribir la siguiente palabra
-    }
-  }
-
-  type(); // Comienza el efecto de escritura
-</script>
