@@ -1,3 +1,7 @@
+---
+
+---
+
 <section
   class="relative flex flex-col w-full md:flex-row items-center justify-center shadow-sm"
 >
@@ -32,8 +36,8 @@
         <div
           class="w-full sm:w-1/2 flex flex-col items-center justify-center sm:mt-0"
         >
-          <div class="w-full bg-white rounded-md mt-6">
-            <form class="mx-2 p-3 mt-2">
+          <div class="w-full bg-white rounded-md mt-6 shadow-xl">
+            <form class="mx-2 p-3 mt-2 text-morado">
               <div class="mb-4">
                 <input
                   placeholder="Nombre Completo"
@@ -79,3 +83,52 @@
     </div>
   </div>
 </section>
+
+<script>
+  // Obtener referencias a los campos del formulario
+  const nombreCompletoInput = document.getElementById("nombre");
+  const emailInput = document.getElementById("email");
+  const mensajeInput = document.getElementById("mensaje");
+
+  // Escuchar el evento de envío del formulario
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Evitar el envío normal del formulario
+
+    // Obtener los valores ingresados por el usuario
+    const nombreCompleto = nombreCompletoInput.value;
+    const email = emailInput.value;
+    const mensaje = mensajeInput.value;
+
+    // Crear un objeto con los datos del formulario
+    const formData = {
+      nombreCompleto,
+      email,
+      mensaje,
+    };
+
+    // URL a la que deseas enviar la solicitud POST
+    const url = "https://logicap-form-production.up.railway.app/form/create";
+
+    // Opciones de la solicitud POST
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    };
+
+    // Realizar la solicitud POST
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        // Manejar la respuesta del servidor aquí
+        console.log("Respuesta del servidor:", data);
+      })
+      .catch((error) => {
+        // Manejar errores aquí
+        console.error("Error al enviar la solicitud:", error);
+      });
+  });
+</script>
