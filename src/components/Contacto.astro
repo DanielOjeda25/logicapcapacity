@@ -21,64 +21,58 @@
               style="letter-spacing: 0.1em;"
             >
               <span class="hidden sm:inline"
-                >¿Estás listo para pasar de las palabras a la acción?</span
+                >¿Estás listo para pasar de las palabras a la acción?
+                Contáctanos!</span
               >
               <span class="inline sm:hidden">Contáctanos</span>
             </p>
           </div>
         </div>
-        <div class="w-full flex rounded-md shadow-md bg-morado h-1/2 mr-5">
-          <div
-            class="w-1/6 flex justify-center items-center flex-col my-auto hidden sm:block"
-          >
-            <div class="mt-28">
-              <h3 class="font-thin text-5xl transform -rotate-90">
-                Contáctanos
-              </h3>
-            </div>
-          </div>
-
-          <div
-            class="w-full bg-white rounded-md flex justify-center items-center"
-          >
-            <div class="w-full bg-white rounded-md mt-16 md:mt-10">
-              <form class="mx-2 p-3 mt-2">
-                <div class="mb-4">
-                  <input
-                    placeholder="Nombre Completo"
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    class="mt-1 p-2 w-full border rounded border-morado"
-                  />
-                </div>
-                <div class="mb-4">
-                  <input
-                    type="email"
-                    placeholder="Email completo"
-                    id="email"
-                    name="email"
-                    class="mt-1 p-2 w-full border rounded border-morado"
-                  />
-                </div>
-                <div class="mb-4">
-                  <textarea
-                    placeholder="Su consulta"
-                    id="mensaje"
-                    name="mensaje"
-                    rows="4"
-                    class="mt-1 p-2 w-full border rounded border-morado"
-                  ></textarea>
-                </div>
-                <div class="w-full justify-end flex">
-                  <button
-                    type="submit"
-                    class="bg-morado text-white py-2 px-4 mr-2 mb-2 rounded-full hover:bg-pera hover:text-morado"
-                    >Enviar</button
-                  >
-                </div>
-              </form>
-            </div>
+        <!-- Segundo elemento -->
+        <div
+          class="w-full sm:w-1/2 flex flex-col items-center justify-center sm:mt-0"
+        >
+          <div class="w-full bg-white rounded-md mt-6">
+            <form class="mx-2 p-3 mt-2">
+              <div class="mb-4">
+                <input
+                  placeholder="Nombre Completo"
+                  required
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  class="mt-1 p-2 w-full border rounded border-morado"
+                />
+              </div>
+              <div class="mb-4">
+                <input
+                  required
+                  type="email"
+                  placeholder="Email completo"
+                  id="email"
+                  name="email"
+                  class="mt-1 p-2 w-full border rounded border-morado"
+                />
+              </div>
+              <div class="mb-4">
+                <textarea
+                  required
+                  placeholder="Su consulta"
+                  id="mensaje"
+                  name="mensaje"
+                  rows="4"
+                  class="mt-1 p-2 w-full border rounded border-morado"
+                ></textarea>
+              </div>
+              <div class="w-full justify-end flex">
+                <button
+                  type="submit"
+                  class="bg-morado text-white py-2 px-4 mr-2 mb-2 rounded-full hover:bg-pera hover:text-morado"
+                >
+                  Enviar
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
