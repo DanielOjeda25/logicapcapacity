@@ -4,31 +4,45 @@
   <div class="w-full text-center flex items-center justify-center shadow-lg">
     <!-- Contenedor para la imagen -->
     <div class="w-full h-full">
+      <!-- Imagen para resoluciones mayores a `sm` -->
+      <img
+        src="/cool.svg"
+        alt="Imagen Descriptiva"
+        class="w-full object-cover sm:hidden"
+      />
+
+      <!-- Imagen para resoluciones de tipo `sm` -->
       <img
         src="/cool-background.svg"
         alt="Imagen Descriptiva"
-        class="w-full h-full object-cover"
+        class="w-full h-full object-cover hidden sm:block"
       />
-
       <!-- Contenedor flex con dos elementos -->
       <div
         class="flex flex-col sm:flex-row items-center justify-between text-white absolute top-0 left-0 w-full h-full"
       >
         <!-- Primer elemento -->
-        <div class="sm:w-1/2 sm:flex sm:justify-start sm:items-center ml-2">
-          <div class="w-full sm:w-auto text-center sm:text-start sm:ml-2">
-            <h1 class="text-4xl sm:text-8xl font-extrabold mt-3">Diseño web</h1>
-            <p class="text-2xl sm:text-6xl font-extrabold text-[#07F6FD]">
+        <div
+          class="sm:w-1/2 h-full sm:flex sm:justify-start sm:items-center ml-2"
+        >
+          <div
+            id="container"
+            class="w-full my-auto flex-col sm:w-auto text-center sm:text-start sm:ml-2"
+          >
+            <h1 class="text-6xl sm:text-8xl font-extrabold mt-24">
+              Diseño web
+            </h1>
+            <p class="text-2xl sm:text-6xl my-2 font-extrabold text-[#07F6FD]">
               100% a medida
             </p>
             <span
-              class="font-thin text-lg sm:text-xl text-center sm:text-start my-2"
+              class="font-thin text-lg sm:text-xl text-center sm:text-start my-5"
             >
               Creamos sitios webs con diseños profesionales <br /> y contenidos
               optimizados sin plantillas.
             </span>
             <div
-              class="w-full justify-center sm:justify-start sm:mt-3 flex mt-3"
+              class="w-full justify-center sm:justify-start sm:mt-3 flex mt-3 my-3"
             >
               <button
                 class="bg-white text-gray-600 hover:text-gray-900 py-2 px-3 sm:px-4 rounded-full text-sm sm:text-lg shadow-sm"

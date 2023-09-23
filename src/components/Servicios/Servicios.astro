@@ -1,47 +1,96 @@
 ---
-import Tarjeta from "./Tarjeta.astro";
-
-const serviciosData = [
+const serviciosDesarrolloWeb = [
   {
-    imagenSrc: "/calendario.png",
-    titulo: "Horarios",
-    descripcion: "Descripción de la Tarjeta 1.",
+    titulo: "Diseño y Desarrollo Web Frontend",
+    subitems: ["Diseño de Interfaces (UI/UX)", "Desarrollo Responsivo"],
+    cover: "/front1.png",
   },
   {
-    imagenSrc: "equipo.png",
-    titulo: "Equipo",
-    descripcion: "Descripción de la Tarjeta 2.",
+    titulo: "Efectos Visuales y Rendimiento",
+    subitems: ["Animaciones y Efectos Visuales", "Optimización de Rendimiento"],
+    cover: "/visual1.png",
   },
   {
-    imagenSrc: "flujo.png",
-    titulo: "Flujo",
-    descripcion: "Descripción de la Tarjeta 3.",
+    titulo: "Mantenimiento y Actualización",
+    subitems: [
+      "Servicios Continuos",
+      "Desarrollo de Aplicaciones Web Interactivas",
+    ],
+    cover: "/mantein1.png",
   },
   {
-    imagenSrc: "gestion.png",
-    titulo: "Tiempos",
-    descripcion: "Descripción de la Tarjeta 4.",
+    titulo: "Optimización de SEO para Mejorar la Visibilidad",
+    subitems: [
+      "Mejora de la velocidad de carga del sitio web para cumplir con los requisitos de rendimiento de los motores de búsqueda.",
+      "Monitoreo constante del rendimiento SEO y ajustes según las tendencias y cambios en los algoritmos de búsqueda.",
+    ],
+    cover: "/ceo1.png",
+  },
+  {
+    titulo: "Creación de Aplicaciones Personalizadas",
+    subitems: [
+      "Desarrollamos aplicaciones web a medida según tus necesidades.",
+      "Añadimos funciones especiales y bases de datos para que funcionen como deseas.",
+    ],
+    cover: "/custom1.png",
+  },
+  {
+    titulo: "Bases de Datos Eficientes",
+    subitems: [
+      "Elegimos la base de datos adecuada para almacenar y gestionar tu información.",
+      "Diseñamos sistemas de bases de datos que sean eficaces y puedan crecer contigo.",
+    ],
+    cover: "/db1.png",
+  },
+  {
+    titulo: "Alojamiento Seguro",
+    subitems: [
+      "Configuramos servidores web y alojamiento en la nube para que tus aplicaciones sean rápidas y seguras.",
+      "Tomamos medidas para proteger tus datos contra amenazas en línea.",
+    ],
+    cover: "/security1.png",
+  },
+  {
+    titulo: "Integración y Facilidad de Uso",
+    subitems: [
+      "Creamos interfaces para que tu aplicación pueda comunicarse con otras aplicaciones y servicios.",
+      "Garantizamos que todo funcione sin problemas y es fácil de usar para ti y tus usuarios.",
+    ],
+    cover: "/integrate1.png",
   },
 ];
 ---
 
 <section id="servicios">
   <div class="container mx-auto py-8">
-    <h1 class="text-3xl font-semibold text-center mb-8">Nuestras Servicios</h1>
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:mx-2"
-    >
+    <h1 class="text-3xl font-semibold text-center mb-8">Nuestros Servicios</h1>
+    <div class="sm:flex flex-wrap">
       {
-        serviciosData.map((servicios) => (
-          <Tarjeta
-            titulo={servicios.titulo}
-            imagenSrc={servicios.imagenSrc}
-            descripcion={servicios.descripcion}
-          />
+        serviciosDesarrolloWeb.map((servicio) => (
+          <div class="w-full sm:w-1/4 shadow-md px-4 py-3 mt-4 mb-4">
+            <div class="bg-white h-full shadow-md rounded-lg overflow-hidden">
+              <img
+                src={servicio.cover}
+                alt="Descripción de la imagen"
+                class="w-10 h-10 sm:w-full sm:h-auto mx-auto"
+              />
+
+              <div class="p-4 items-center justify-center flex flex-col">
+                <h2 class="text-xl font-semibold text-gray-800 text-start">
+                  {servicio.titulo}
+                </h2>
+                <ul class="mt-2 text-sm text-gray-600">
+                  {servicio.subitems.map((subitem) => (
+                    <li>
+                      <span class="mr-2">•</span> {subitem}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         ))
       }
     </div>
   </div>
 </section>
-
-<script></script>
