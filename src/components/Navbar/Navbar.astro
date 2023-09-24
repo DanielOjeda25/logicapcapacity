@@ -11,9 +11,9 @@ import NavLinks from "./NavLinks.astro";
       <img src="Logicap_logo.svg" alt="" />
     </a>
     <div class="hidden sm:flex space-x-4">
-      <NavLinks title="Nosotros" to={"#aboutus"} />
-      <NavLinks title="Servicios" to={"#servicios"} />
-      <NavLinks title="Contacto" to={"#contacto"} />
+      <NavLinks title="About Us" to={"#aboutus"} />
+      <NavLinks title="Services" to={"#services"} />
+      <NavLinks title="Contact" to={"#contact"} />
     </div>
     <div class="sm:hidden">
       <button id="menu-toggle" class="text-slate-600">
@@ -38,13 +38,11 @@ import NavLinks from "./NavLinks.astro";
   class="hidden fixed w-full sm:hidden z-10 transition-all bg-white"
 >
   <div class="p-4 flex flex-col">
-    <NavLinks title="Nosotros" to={"#aboutus"} />
-    <NavLinks title="Servicios" to={"#servicios"} />
-    <NavLinks title="Contacto" to={"#contacto"} />
+    <NavLinks title="About Us" to={"#aboutus"} />
+    <NavLinks title="Services" to={"#services"} />
+    <NavLinks title="Contact" to={"#contact"} />
   </div>
 </div>
-
-<!-- ... (código anterior) ... -->
 
 <script>
   document.getElementById("menu-toggle").addEventListener("click", function () {

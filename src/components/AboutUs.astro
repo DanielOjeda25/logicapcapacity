@@ -1,17 +1,17 @@
 ---
 import Tarjeta from "../components/Servicios/Tarjeta.astro";
-const personal = [
+const team = [
   {
     imagenSrc: "/Brian.png",
     titulo: "Brian Marquez",
     descripcion:
-      "Desarrollador web backend, creador de arquitecturas, servicios a medida, y mantenimiento competente.",
+      "Backend web developer, creator of architectures, custom services, and competent maintenance.",
   },
   {
     imagenSrc: "Dany.png",
-    titulo: "Daniel Ojeda",
+    title: "Daniel Ojeda",
     descripcion:
-      "Desarrollador web frontend, creador de paginas web interactivas, atractivas y modernas.",
+      "Frontend web developer, creator of interactive, attractive, and modern web pages.",
   },
 ];
 ---
@@ -20,31 +20,28 @@ const personal = [
   <div class="container mx-auto px-4 md:pt-6">
     <div class="text-center md:flex md:items-center md:justify-center">
       <img
-        src="/grupo.png"
+        src="/group.png"
         alt=""
         class="w-10 h-auto mb-2 md:mb-0 mx-auto md:mx-0 md:mr-2"
       />
-      <h2 class="text-2xl md:text-4xl font-semibold text-gray-800">
-        Sobre Nosotros
-      </h2>
+      <h2 class="text-2xl md:text-4xl font-semibold text-gray-800">About Us</h2>
     </div>
     <p
       class="mt-2 md:mt-4 text-gray-800 text-lg md:text-center text-center"
       id="aboutus-text"
     >
-      Somos un equipo de expertos apasionados por la creación de sitios web
-      impactantes y funcionales que impulsan el éxito de tu negocio en línea.
-      Nuestra experiencia y conocimientos en diseño web, desarrollo front-end y
-      back-end, así como en usabilidad y experiencia de usuario, nos permiten
-      ofrecer resultados excepcionales. Estamos al tanto de las últimas
-      tendencias y tecnologías en el mundo digital, lo que nos permite crear
-      sitios web modernos, intuitivos y optimizados para todos los dispositivos.
+      We are a team of experts passionate about creating stunning and functional
+      websites that drive your online business success. Our expertise and
+      knowledge in web design, front-end and back-end development, as well as
+      usability and user experience, allow us to deliver exceptional results. We
+      stay updated with the latest trends and technologies in the digital world,
+      enabling us to create modern, intuitive, and device-optimized websites.
     </p>
     <div class="flex flex-col sm:flex-row">
       {
-        personal.map((person) => (
+        team.map((person) => (
           <Tarjeta
-            titulo={person.titulo}
+            titulo={person.title}
             descripcion={person.descripcion}
             imagenSrc={person.imagenSrc}
           />

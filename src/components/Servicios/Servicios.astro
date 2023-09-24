@@ -1,95 +1,95 @@
 ---
-const serviciosDesarrolloWeb = [
+const webDevelopmentServices = [
   {
-    titulo: "Diseño y Desarrollo Web Frontend",
-    subitems: ["Diseño de Interfaces (UI/UX)", "Desarrollo Responsivo"],
+    title: "Frontend Web Design and Development",
+    subitems: ["Interface Design (UI/UX)", "Responsive Development"],
     cover: "/front1.png",
   },
   {
-    titulo: "Efectos Visuales y Rendimiento",
-    subitems: ["Animaciones y Efectos Visuales", "Optimización de Rendimiento"],
+    title: "Visual Effects and Performance",
+    subitems: ["Animations and Visual Effects", "Performance Optimization"],
     cover: "/visual1.png",
   },
   {
-    titulo: "Mantenimiento y Actualización",
+    title: "Maintenance and Updates",
     subitems: [
-      "Servicios Continuos",
-      "Desarrollo de Aplicaciones Web Interactivas",
+      "Continuous Services",
+      "Interactive Web Application Development",
     ],
     cover: "/mantein1.png",
   },
   {
-    titulo: "Optimización de SEO para Mejorar la Visibilidad",
+    title: "SEO Optimization for Improved Visibility",
     subitems: [
-      "Mejora de la velocidad de carga del sitio web para cumplir con los requisitos de rendimiento de los motores de búsqueda.",
-      "Monitoreo constante del rendimiento SEO y ajustes según las tendencias y cambios en los algoritmos de búsqueda.",
+      "Improving website load speed to meet search engine performance requirements.",
+      "Continuous SEO performance monitoring and adjustments based on search algorithm trends and changes.",
     ],
     cover: "/ceo1.png",
   },
   {
-    titulo: "Creación de Aplicaciones Personalizadas",
+    title: "Custom Application Development",
     subitems: [
-      "Desarrollamos aplicaciones web a medida según tus necesidades.",
-      "Añadimos funciones especiales y bases de datos para que funcionen como deseas.",
+      "We develop custom web applications tailored to your needs.",
+      "We add special features and databases to make them work as you desire.",
     ],
     cover: "/custom1.png",
   },
   {
-    titulo: "Bases de Datos Eficientes",
+    title: "Efficient Database Management",
     subitems: [
-      "Elegimos la base de datos adecuada para almacenar y gestionar tu información.",
-      "Diseñamos sistemas de bases de datos que sean eficaces y puedan crecer contigo.",
+      "We choose the right database to store and manage your information.",
+      "We design database systems that are efficient and can grow with you.",
     ],
     cover: "/db1.png",
   },
   {
-    titulo: "Alojamiento Seguro",
+    title: "Secure Hosting",
     subitems: [
-      "Configuramos servidores web y alojamiento en la nube para que tus aplicaciones sean rápidas y seguras.",
-      "Tomamos medidas para proteger tus datos contra amenazas en línea.",
+      "We configure web servers and cloud hosting for fast and secure applications.",
+      "We take measures to protect your data against online threats.",
     ],
     cover: "/security1.png",
   },
   {
-    titulo: "Integración y Facilidad de Uso",
+    title: "Integration and User-Friendly Experience",
     subitems: [
-      "Creamos interfaces para que tu aplicación pueda comunicarse con otras aplicaciones y servicios.",
-      "Garantizamos que todo funcione sin problemas y es fácil de usar para ti y tus usuarios.",
+      "We create interfaces for your application to communicate with other applications and services.",
+      "We ensure everything runs smoothly and is easy to use for you and your users.",
     ],
     cover: "/integrate1.png",
   },
 ];
 ---
 
-<section id="servicios">
+<section id="services">
   <div class="container mx-auto py-8">
     <div class="text-center md:flex md:items-center md:justify-center">
       <img
-        src="/servicios1.png"
+        src="/services1.png"
         alt=""
         class="w-10 h-auto mb-2 md:mb-0 mx-auto md:mx-0 md:mr-2"
       />
       <h2 class="text-2xl md:text-4xl font-semibold text-gray-800">
-        Nuestros Servicios
+        Our Services
       </h2>
     </div>
     <div class="sm:flex flex-wrap">
       {
-        serviciosDesarrolloWeb.map((servicio) => (
+        webDevelopmentServices.map((service) => (
           <div class="w-full sm:w-1/4 shadow-md px-4 py-3 mt-4 mb-4">
             <div class="bg-white h-full shadow-md rounded-lg overflow-hidden">
               <img
-                src={servicio.cover}
-                alt="Descripción de la imagen"
+                src={service.cover}
+                alt="Image Description"
                 class="w-10 h-10 sm:w-full sm:h-auto mx-auto"
               />
 
               <div class="p-4 items-center justify-center flex flex-col">
                 <h2 class="text-xl font-semibold text-gray-800 text-start">
-                  {servicio.titulo}
+                  {service.title}
                 </h2>
                 <ul class="mt-2 text-sm text-gray-600">
-                  {servicio.subitems.map((subitem) => (
+                  {service.subitems.map((subitem) => (
                     <li>
                       <span class="mr-2">•</span> {subitem}
                     </li>

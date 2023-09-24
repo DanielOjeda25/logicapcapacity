@@ -1,0 +1,79 @@
+---
+import Linkedln from "./Linkedln.astro";
+---
+
+<footer class="bg-white text-gray-800 sm:py-8 pt-40">
+  <div class="container mx-auto flex flex-wrap">
+    <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/6 mb-4">
+      <!-- Space for the logo -->
+      <img src="Logicap_logo.svg" alt="Logo" class="w-24 h-24 mx-auto" />
+    </div>
+    <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 mb-4 ml-1">
+      <!-- Social Media Icons -->
+      <h3 class="text-lg font-semibold mb-4">Social Media</h3>
+      <div class="flex flex-col space-y-4">
+        <!-- LinkedIn Icon for Daniel Ojeda -->
+        <div class="flex items-center">
+          <a
+            href="https://www.linkedin.com/in/daniel-ojeda26/"
+            target="_blank"
+            class="text-purple hover:bg-blue-200 px-4 py-2 rounded-md shadow-lg"
+          >
+            Daniel Ojeda
+            <Linkedln />
+          </a>
+        </div>
+        <!-- LinkedIn Icon for Brian Márquez -->
+        <div class="flex items-center">
+          <a
+            href="https://www.linkedin.com/in/braian-marquez-8741071b2/"
+            target="_blank"
+            class="text-purple hover:bg-blue-200 px-4 py-2 rounded-md shadow-lg"
+          >
+            Brian Márquez
+            <Linkedln />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 mb-4 ml-1">
+      <!-- First column with elements -->
+      <h3 class="text-lg font-semibold mb-4">Email</h3>
+      <ul class="">
+        <li>
+          <a href="#contact" class="">logicalcapacity@gmail.com</a>
+        </li>
+      </ul>
+    </div>
+    <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 mb-4 ml-1">
+      <!-- First column with elements -->
+      <h3 class="text-lg font-semibold mb-4">About Us</h3>
+      <ul class="">
+        <li>
+          <a href="#aboutus" class="">About our organization</a>
+        </li>
+      </ul>
+    </div>
+    <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 mb-4 ml-1">
+      <!-- Column for additional information -->
+      <h3 class="text-lg font-semibold mb-4">Some of Our Services</h3>
+      <ul class="">
+        <li>
+          <a href="#services">Custom Application Development</a>
+        </li>
+        <li>
+          <a href="#services">Efficient Database Solutions</a>
+        </li>
+        <li>
+          <a href="#services">Secure Hosting</a>
+        </li>
+        <li>
+          <a href="#services">Visual Effects and Performance</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container mx-auto text-center mt-8">
+    <p class="text-sm text-gray-600">&copy; All rights reserved</p>
+  </div>
+</footer>

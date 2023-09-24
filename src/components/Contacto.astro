@@ -16,20 +16,19 @@
       />
       <!-- Contenedor flex con dos elementos -->
       <div
-        class="flex flex-col sm:flex-row items-center justify-between text-white absolute top-0 left-0 w-full h-full"
+        class="flex flex-col sm:flex-row items-center justify-between text-morado absolute top-0 left-0 w-full h-full"
       >
         <!-- Primer elemento -->
         <div class="sm:w-1/2 sm:flex sm:justify-start sm:items-center ml-2">
           <div class="w-full sm:w-auto text-center sm:text-start sm:ml-2">
             <p
-              class="text-2xl sm:text-6xl font-medium text-morado break-words"
+              class="text-2xl sm:text-6xl font-medium text-purple break-words"
               style="letter-spacing: 0.1em;"
             >
               <span class="hidden sm:inline"
-                >¿Estás listo para pasar de las palabras a la acción?
-                Contáctanos!</span
+                >Are you ready to turn words into action? Contact us!</span
               >
-              <span class="inline sm:hidden">Contáctanos</span>
+              <span class="inline sm:hidden">Contact Us</span>
             </p>
           </div>
         </div>
@@ -41,7 +40,7 @@
             <form class="mx-2 p-3 mt-2 text-morado">
               <div class="mb-4">
                 <input
-                  placeholder="Nombre Completo"
+                  placeholder="Full Name"
                   required
                   type="text"
                   id="nombre"
@@ -53,7 +52,7 @@
                 <input
                   required
                   type="email"
-                  placeholder="Email completo"
+                  placeholder="Full Email"
                   id="email"
                   name="email"
                   class="mt-1 p-2 w-full border rounded border-morado"
@@ -62,7 +61,7 @@
               <div class="mb-4">
                 <textarea
                   required
-                  placeholder="Su consulta"
+                  placeholder="Your Inquiry"
                   id="mensaje"
                   name="mensaje"
                   rows="4"
@@ -74,7 +73,7 @@
                   type="submit"
                   class="bg-morado text-white py-2 px-4 mr-2 mb-2 rounded-full hover:bg-pera hover:text-morado"
                 >
-                  Enviar
+                  Send
                 </button>
               </div>
             </form>
@@ -107,6 +106,7 @@
       email,
       mensaje,
     };
+    console.log(formData);
 
     // URL a la que deseas enviar la solicitud POST
     const url = "https://logicap-form-production.up.railway.app/form/create";
