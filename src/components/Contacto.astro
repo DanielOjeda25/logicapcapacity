@@ -62,8 +62,13 @@
                   name="mensaje"
                   rows="4"
                   class="mt-1 p-2 w-full border rounded border-morado"
-                ></textarea>
+                  maxlength="500"></textarea>
+                <p class="text-xs text-gray-500 mt-1" id="char-count">
+                  500 characters remaining
+                </p>
+                <!-- Nuevo elemento -->
               </div>
+
               <div
                 class="w-full flex flex-col sm:flex-row sm:items-center sm:justify-between"
               >
@@ -91,7 +96,21 @@
   const nombreCompletoInput = document.getElementById("nombre");
   const emailInput = document.getElementById("email");
   const mensajeInput = document.getElementById("mensaje");
+  const charCount = document.getElementById("char-count");
 
+  mensajeInput.addEventListener("input", function () {
+    const currentCount = mensajeInput.value.length;
+    const remainingCount = 500 - currentCount;
+    charCount.textContent = `${remainingCount} characters remaining`;
+
+    // Deshabilitar el botón "Send" si se supera el límite de 500 caracteres
+    const sendButton = document.querySelector("button[type='submit']");
+    if (remainingCount < 0) {
+      sendButton.disabled = true;
+    } else {
+      sendButton.disabled = false;
+    }
+  });
   // Escuchar el evento de envío del formulario
   const form = document.querySelector("form");
   form.addEventListener("submit", function (event) {
