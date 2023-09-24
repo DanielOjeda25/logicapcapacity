@@ -6,32 +6,107 @@ import Linkedln from "./Linkedln.astro";
   <div class="container mx-auto flex flex-wrap">
     <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/6 mb-4">
       <!-- Space for the logo -->
-      <img src="Logicap_logo.svg" alt="Logo" class="w-24 h-24 mx-auto" />
+      <a href="#header">
+        <img src="Logicap_logo.svg" alt="Logo" class="w-28 h-28 mx-auto" />
+      </a>
     </div>
     <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 mb-4 ml-1">
       <!-- Social Media Icons -->
       <h3 class="text-lg font-semibold mb-4">Social Media</h3>
-      <div class="flex flex-col space-y-4">
-        <!-- LinkedIn Icon for Daniel Ojeda -->
-        <div class="flex items-center">
-          <a
-            href="https://www.linkedin.com/in/daniel-ojeda26/"
-            target="_blank"
-            class="text-purple hover:bg-blue-200 px-4 py-2 rounded-md shadow-lg"
-          >
-            Daniel Ojeda
-            <Linkedln />
-          </a>
-        </div>
+      <div class="flex sm:flex-col">
         <!-- LinkedIn Icon for Brian Márquez -->
         <div class="flex items-center">
           <a
             href="https://www.linkedin.com/in/braian-marquez-8741071b2/"
             target="_blank"
-            class="text-purple hover:bg-blue-200 px-4 py-2 rounded-md shadow-lg"
+            class="text-purple hover:bg-blue-200 px-4 py-2 rounded-full shadow-lg"
           >
-            Brian Márquez
             <Linkedln />
+          </a>
+          <a
+            href="https://www.instagram.com/logicalcapacity/"
+            target="_blank"
+            class="text-purple hover:bg-pink-200 px-4 py-2 rounded-full shadow-lg mx-2"
+          >
+            <svg
+              width="20px"
+              height="20px"
+              viewBox="0 -0.5 25 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M15.5 5H9.5C7.29086 5 5.5 6.79086 5.5 9V15C5.5 17.2091 7.29086 19 9.5 19H15.5C17.7091 19 19.5 17.2091 19.5 15V9C19.5 6.79086 17.7091 5 15.5 5Z"
+                  stroke="#000000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.5 15C10.8431 15 9.5 13.6569 9.5 12C9.5 10.3431 10.8431 9 12.5 9C14.1569 9 15.5 10.3431 15.5 12C15.5 12.7956 15.1839 13.5587 14.6213 14.1213C14.0587 14.6839 13.2956 15 12.5 15Z"
+                  stroke="#000000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <rect
+                  x="15.5"
+                  y="9"
+                  width="2"
+                  height="2"
+                  rx="1"
+                  transform="rotate(-90 15.5 9)"
+                  fill="#000000"></rect>
+                <rect
+                  x="16"
+                  y="8.5"
+                  width="1"
+                  height="1"
+                  rx="0.5"
+                  transform="rotate(-90 16 8.5)"
+                  stroke="#000000"
+                  stroke-linecap="round"></rect>
+              </g></svg
+            >
+          </a>
+          <a
+            href="https://www.youtube.com/@Danived"
+            target="_blank"
+            class="text-purple hover:bg-red-200 px-4 py-2 rounded-full shadow-lg"
+          >
+            <svg
+              width="20px"
+              height="20px"
+              viewBox="0 -0.5 25 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M18.168 19.0028C20.4724 19.0867 22.41 17.29 22.5 14.9858V9.01982C22.41 6.71569 20.4724 4.91893 18.168 5.00282H6.832C4.52763 4.91893 2.58998 6.71569 2.5 9.01982V14.9858C2.58998 17.29 4.52763 19.0867 6.832 19.0028H18.168Z"
+                  stroke="#000000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.008 9.17784L15.169 11.3258C15.3738 11.4454 15.4997 11.6647 15.4997 11.9018C15.4997 12.139 15.3738 12.3583 15.169 12.4778L12.008 14.8278C11.408 15.2348 10.5 14.8878 10.5 14.2518V9.75184C10.5 9.11884 11.409 8.77084 12.008 9.17784Z"
+                  stroke="#000000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </g></svg
+            >
           </a>
         </div>
       </div>
@@ -40,24 +115,76 @@ import Linkedln from "./Linkedln.astro";
       <!-- First column with elements -->
       <h3 class="text-lg font-semibold mb-4">Email</h3>
       <ul class="">
-        <li>
-          <a href="#contact" class="">logicalcapacity@gmail.com</a>
+        <li class="mb-2">
+          <div class="flex items-center">
+            <svg
+              fill="#000000"
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"
+                ><path
+                  d="m16.484 11.976 6.151-5.344v10.627zm-7.926.905 2.16 1.875c.339.288.781.462 1.264.462h.017-.001.014c.484 0 .926-.175 1.269-.465l-.003.002 2.16-1.875 6.566 5.639h-20.009zm-6.572-7.516h20.03l-9.621 8.356c-.104.082-.236.132-.38.132-.005 0-.009 0-.014 0h.001c-.004 0-.009 0-.014 0-.144 0-.277-.05-.381-.133l.001.001zm-.621 1.266 6.15 5.344-6.15 5.28zm21.6-2.441c-.24-.12-.522-.19-.821-.19h-20.285c-.3.001-.584.071-.835.197l.011-.005c-.618.309-1.035.937-1.035 1.663v.004 12.168c.001 1.026.833 1.857 1.858 1.858h20.283c1.026-.001 1.857-.833 1.858-1.858v-12.168c0-.001 0-.002 0-.004 0-.727-.419-1.357-1.029-1.66l-.011-.005z"
+                ></path></g
+              ></svg
+            >
+            <a href="#contact" class="text-morado ml-2"
+              >logicalcapacity@gmail.com</a
+            >
+          </div>
         </li>
       </ul>
     </div>
     <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 mb-4 ml-1">
-      <!-- First column with elements -->
       <h3 class="text-lg font-semibold mb-4">About Us</h3>
       <ul class="">
-        <li>
-          <a href="#aboutus" class="">About our organization</a>
+        <li class="mb-2">
+          <div class="flex items-center">
+            <svg
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                <rect width="24" height="24" fill="white"></rect>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                  stroke="#000000"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></circle>
+                <path
+                  d="M12 11V17"
+                  stroke="#000000"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path
+                  d="M11.75 8V7H12.25V8H11.75Z"
+                  stroke="#000000"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </g></svg
+            >
+            <a href="#aboutus" class="text-morado ml-2"
+              >About our organization</a
+            >
+          </div>
         </li>
       </ul>
     </div>
     <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 mb-4 ml-1">
       <!-- Column for additional information -->
       <h3 class="text-lg font-semibold mb-4">Some of Our Services</h3>
-      <ul class="">
+      <ol class="list-disc ml-1">
         <li>
           <a href="#services">Custom Application Development</a>
         </li>
@@ -70,10 +197,12 @@ import Linkedln from "./Linkedln.astro";
         <li>
           <a href="#services">Visual Effects and Performance</a>
         </li>
-      </ul>
+      </ol>
     </div>
   </div>
-  <div class="container mx-auto text-center mt-8">
-    <p class="text-sm text-gray-600">&copy; All rights reserved</p>
+  <div
+    class="container mx-auto text-center mt-8 bg-morado py-2 rounded-md shadow-md"
+  >
+    <p class="text-sm text-pera">&copy; All rights reserved</p>
   </div>
 </footer>

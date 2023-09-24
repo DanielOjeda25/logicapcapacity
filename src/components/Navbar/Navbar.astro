@@ -2,7 +2,7 @@
 import NavLinks from "./NavLinks.astro";
 ---
 
-<nav class="p-4 fixed bg-white top-0 w-full z-10 shadow-sm">
+<nav class="p-4 fixed bg-white top-0 w-full z-10 shadow-sm" id="navbar">
   <div class="container mx-auto flex justify-between items-center">
     <a
       href="/"
@@ -12,8 +12,8 @@ import NavLinks from "./NavLinks.astro";
     </a>
     <div class="hidden sm:flex space-x-4">
       <NavLinks title="About Us" to={"#aboutus"} />
-      <NavLinks title="Services" to={"#services"} />
-      <NavLinks title="Contact" to={"#contact"} />
+      <NavLinks title="Services" to={"#servicios"} />
+      <NavLinks title="Contact" to={"#contacto"} />
     </div>
     <div class="sm:hidden">
       <button id="menu-toggle" class="text-slate-600">
@@ -39,8 +39,8 @@ import NavLinks from "./NavLinks.astro";
 >
   <div class="p-4 flex flex-col">
     <NavLinks title="About Us" to={"#aboutus"} />
-    <NavLinks title="Services" to={"#services"} />
-    <NavLinks title="Contact" to={"#contact"} />
+    <NavLinks title="Services" to={"#servicios"} />
+    <NavLinks title="Contact" to={"#contacto"} />
   </div>
 </div>
 
