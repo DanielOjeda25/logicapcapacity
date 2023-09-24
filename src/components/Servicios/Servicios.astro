@@ -76,7 +76,7 @@ const webDevelopmentServices = [
     <div class="sm:flex flex-wrap">
       {
         webDevelopmentServices.map((service) => (
-          <div class="w-full sm:w-1/4 shadow-md px-4 py-3 mt-4 mb-4">
+          <div class="w-full sm:w-1/4  px-4 py-3 mt-4 mb-4 shy-effect">
             <div class="bg-white h-full shadow-md rounded-lg overflow-hidden">
               <img
                 src={service.cover}
@@ -103,3 +103,27 @@ const webDevelopmentServices = [
     </div>
   </div>
 </section>
+
+<style>
+  .shy-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shy-effect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    background: #07f5fd21; /* Color del resplandor */
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+    z-index: -1;
+  }
+
+  .shy-effect:hover::before {
+    width: 110%; /* Ancho del resplandor al pasar el mouse */
+  }
+</style>

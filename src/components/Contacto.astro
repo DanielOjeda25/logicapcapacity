@@ -1,7 +1,3 @@
----
-
----
-
 <section
   id="contacto"
   class="relative flex flex-col w-full md:flex-row items-center justify-center shadow-sm"
@@ -40,7 +36,7 @@
             <form class="mx-2 p-3 mt-2 text-morado">
               <div class="mb-4">
                 <input
-                  placeholder="Full Name"
+                  placeholder="* Full Name"
                   required
                   type="text"
                   id="nombre"
@@ -52,7 +48,7 @@
                 <input
                   required
                   type="email"
-                  placeholder="Full Email"
+                  placeholder="* Full Email"
                   id="email"
                   name="email"
                   class="mt-1 p-2 w-full border rounded border-morado"
@@ -61,20 +57,25 @@
               <div class="mb-4">
                 <textarea
                   required
-                  placeholder="Your Inquiry"
+                  placeholder="* Your Inquiry"
                   id="mensaje"
                   name="mensaje"
                   rows="4"
                   class="mt-1 p-2 w-full border rounded border-morado"
                 ></textarea>
               </div>
-              <div class="w-full justify-end flex">
+              <div
+                class="w-full flex flex-col sm:flex-row sm:items-center sm:justify-between"
+              >
                 <button
                   type="submit"
                   class="bg-morado text-white py-2 px-4 mr-2 mb-2 rounded-full hover:bg-pera hover:text-morado"
                 >
                   Send
                 </button>
+                <p class="text-xs text-red-600 sm:ml-2 mt-2 sm:mt-0">
+                  * required fields
+                </p>
               </div>
             </form>
           </div>
@@ -85,6 +86,7 @@
 </section>
 
 <script>
+  import Swal from "sweetalert2";
   // Obtener referencias a los campos del formulario
   const nombreCompletoInput = document.getElementById("nombre");
   const emailInput = document.getElementById("email");
@@ -106,7 +108,6 @@
       email,
       mensaje,
     };
-    console.log(formData);
 
     // URL a la que deseas enviar la solicitud POST
     const url = "https://logicap-form-production.up.railway.app/form/create";
@@ -126,9 +127,14 @@
       .then((data) => {
         // Manejar la respuesta del servidor aquí
         console.log("Respuesta del servidor:", data);
+        Swal.fire("Cool", `${data.message}`, "success").then(() =>
+          window.location.reload()
+        );
+
+        // Desplazar la página al principio
+        window.scrollTo(0, 0);
       })
       .catch((error) => {
-        // Manejar errores aquí
         console.error("Error al enviar la solicitud:", error);
       });
   });

@@ -81,13 +81,29 @@ import NavLinks from "./NavLinks.astro";
 
   // Agrega un manejador de eventos a cada elemento del menú
   mobileMenuItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      // Cierra el menú móvil al hacer clic en un elemento del menú
-      mobileMenu.style.display = "none";
-      // Restaura el icono de hamburguesa original
-      menuToggle.innerHTML = originalIcon; // Restaura el SVG original
-      // Asegúrate de que la variable isOpen refleje el estado actual
-      isOpen = false;
+    item.addEventListener("click", (e) => {
+      e.preventDefault(); // Evitar la acción de salto predeterminada
+
+      // Obtén el destino del enlace desde el atributo "href"
+      const targetId = item.getAttribute("href").substring(1); // Elimina el "#" del href
+
+      // Encuentra el elemento de destino por su ID
+      const targetElement = document.getElementById(targetId);
+
+      // Comprueba si se encontró el elemento de destino
+      if (targetElement) {
+        // Desplázate suavemente al elemento de destino
+        targetElement.scrollIntoView({
+          behavior: "smooth", // Añade un efecto de desplazamiento suave
+        });
+
+        // Cierra el menú móvil al hacer clic en un elemento del menú
+        mobileMenu.style.display = "none";
+        // Restaura el icono de hamburguesa original
+        menuToggle.innerHTML = originalIcon; // Restaura el SVG original
+        // Asegúrate de que la variable isOpen refleje el estado actual
+        isOpen = false;
+      }
     });
   });
 </script>
