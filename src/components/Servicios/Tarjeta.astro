@@ -10,7 +10,7 @@ const { imagenSrc, titulo, descripcion } = Astro.props;
 <div
   class="bg-white rounded-lg shadow-lg transition-transform hover:shadow-xl hover:transform hover:scale-100 w-full"
 >
-  <div class="w-full flex items-center justify-center h-48">
+  <div class="w-full flex items-center justify-center">
     <img
       src={imagenSrc}
       alt={titulo}
@@ -20,6 +20,6 @@ const { imagenSrc, titulo, descripcion } = Astro.props;
 
   <div class="p-4">
     <h2 class="text-xl font-semibold mb-2 text-blue-600">{titulo}</h2>
-    <p class="text-gray-600">{descripcion}</p>
+    <p class="text-gray-600 text-center">{descripcion}</p>
   </div>
 </div>
